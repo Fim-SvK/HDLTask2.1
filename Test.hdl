@@ -1,0 +1,11 @@
+CHIP Test {
+
+	IN a, b, sel;
+	OUT out;
+
+	PARTS:
+	Nand( a=sel, b=sel, out= selNANDsel );
+	Nand( a=sel, b=b, out= selNANDb );
+	Nand( a=a, b=selNANDsel, out= selNANDa);
+	Nand( a = selNANDa, b= selNANDb, out = out);
+}
